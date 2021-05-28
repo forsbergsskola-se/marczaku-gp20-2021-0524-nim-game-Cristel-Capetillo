@@ -2,19 +2,69 @@
 //
 
 #include <iostream>
+using namespace std;
+
+int aiPicks(int matchAmount);
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    int totalMatches = 24;
+    string matchGraph = "|";
+
+    while (totalMatches > 0) {
+        cout << "Total amount of matches: " << totalMatches << endl;
+        for (int i = 0; i < totalMatches; ++i) {
+            std::cout << "|";
+        }
+        std::cout << std::endl;
+        cout << "Pick a number from 1 to 3" << endl;
+
+        int i;
+        cin >> i;
+
+        if (i > 0 && i < 4) {
+            totalMatches -= i;
+
+            if (totalMatches < 1) {
+                cout << "You lose!" << endl;
+                break;
+            }
+
+            totalMatches = aiPicks(totalMatches);
+        }
+
+        else cout << "Invalid number" << endl;
+    }
+
+    cout << "GAME OVER" << endl;
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
+int aiPicks(int matchAmount) {
+    cout << "AI is picking a number..." << endl;
 
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
+    if (matchAmount == 1) {
+        matchAmount -= 1;
+        cout << "AI picked: " << 1 << endl;
+        cout << "You win!" << endl;
+    }
+
+    else if (matchAmount == 2) {
+        matchAmount -= 1;
+        cout << "AI picked: " << 1 << endl;
+    }
+
+    else if (matchAmount == 3) {
+        matchAmount -= 2;
+        cout << "AI picked: " << 2 << endl;
+    }
+
+    else {
+        int randomPick;
+        randomPick = rand() % 3 + 1;
+        cout << "AI picked: " << randomPick << endl;
+        matchAmount -= randomPick;
+    }
+
+    return matchAmount;
+}
+
