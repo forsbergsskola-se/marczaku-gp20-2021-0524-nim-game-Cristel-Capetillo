@@ -41,31 +41,31 @@ int main()
 }
 
 int aiPick(int matchAmount) {
-    cout << "AI is picking a number now" << endl;
+    cout << "AI is picking a number now..." << endl;
 
     if (matchAmount == 1)
     {
         matchAmount -= 1;
-        cout << "AI has removed the following matches amount: " << 1 << endl;
+        cout << "AI has picked: " << 1 << endl;
         cout << "You win!" << endl;
     }
     else if (matchAmount == 2) 
     {
         matchAmount -= 1;
-        cout << "AI removed this amount: " << 1 << endl;
+        cout << "AI has picked: " << 1 << endl;
     }
         
     else if (matchAmount == 3) 
     {
         matchAmount -= 2;
-        cout << "AI removed this amount: " << 2 << endl;
+        cout << "AI has picked: " << 2 << endl;
     }
         
     else 
     {
         int r;
         r = rand() % 3 + 1;
-        cout << "AI removed this amount: " << r << endl;
+        cout << "AI has picked: " << r << endl;
         matchAmount -= r;
     }
     return matchAmount;
