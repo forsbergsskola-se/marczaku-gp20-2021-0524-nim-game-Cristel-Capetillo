@@ -21,11 +21,11 @@
   - [Visual Studio Code](https://code.visualstudio.com)
   ---
   ## My results:
-  - Nim:
+  - NIM:
   ![nimFinalCPP](https://user-images.githubusercontent.com/69099899/119996374-f9337780-bfce-11eb-86e7-7e38a1f94740.gif)
   
-  -TicTacToe:
+  - TICTACTOE:
   ![TTTFinalCPP](https://user-images.githubusercontent.com/69099899/119996410-05b7d000-bfcf-11eb-878f-dab843d89879.gif)
  
-  -BinaryConverter:
+  - BINARY CONVERTER:
   ![binaryFinalCPP](https://user-images.githubusercontent.com/69099899/119996422-09e3ed80-bfcf-11eb-9ee3-4ef6c96ad561.gif)
