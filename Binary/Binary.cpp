@@ -2,19 +2,54 @@
 //
 
 #include <iostream>
+using namespace std;
 
-int main()
-{
-    std::cout << "Hello World!\n";
+const int bitNumber = 32;
+int bits[bitNumber];
+
+void displayBinary(unsigned input) {
+    int i = 0;
+
+    while (input > 0) {
+        bits[i] = input % 2;
+        input /= 2;
+        i++;
+    }
+
+    cout << "0b";
+    int numberOfBlocks = 4;
+
+    for (int number = bitNumber - 1; number >= 0; number--) {
+        cout << bits[number];
+        --numberOfBlocks;
+        if (numberOfBlocks == 0) {
+            cout << " ";
+            numberOfBlocks = 4;
+        }
+    }
+
+    cout << endl;
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
 
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
+int main() {
+    cout << "Binary converter ready!\nOnly positive numbers can be converted." << endl;
+
+    while (true) {
+        cout << "-Type a number to convert it to binary:" << endl;
+        unsigned input;
+        cin >> input;
+        if (input < 0) {
+            cout << input << "is a negative number and it is not supported yet." << endl;
+        }
+        else {
+            cout << "-Type 1 to confirm:" << endl;
+            int selectedOption;
+            cin >> selectedOption;
+            if (selectedOption == 1){ 
+                cout << "The number you typed in binary is: " << endl;
+                displayBinary(input);
+            }
+        }
+    }
+}
